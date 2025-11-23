@@ -1,0 +1,5 @@
+title: Al Cantuccio
+url: "https://www.alcantuccio.it"
+baseurl: ""
+plugins:
+  - jekyll-sitemap
