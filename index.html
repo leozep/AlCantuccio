@@ -13,20 +13,48 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al Cantuccio | Marino</title>
     
-    <!-- FAVICON AGGIUNTA QUI -->
-    <!-- Questa riga crea un'icona verde con la "C" bianca senza bisogno di file esterni -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%239ACD32' /%3E%3Ctext x='50' y='68' font-family='serif' font-weight='bold' font-size='65' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+    <!-- --- SEO & META TAGS --- -->
+    <title>Al Cantuccio | Ristorante Pizzeria a Marino</title>
+    <meta name="description" content="Dal 1990 Al Cantuccio offre cucina tradizionale romana, pizza e vini dei Castelli nel cuore di Marino. Prenota il tuo tavolo!">
+    <meta name="keywords" content="Ristorante Marino, Pizzeria Marino, Cucina Romana, Castelli Romani, Pasta fatta a mano, Al Cantuccio">
+    <meta name="author" content="Al Cantuccio">
 
+    <!-- Social Sharing (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.alcantucciomarino.it/">
+    <meta property="og:title" content="Al Cantuccio | Ristorante Pizzeria a Marino">
+    <meta property="og:description" content="Cucina romana, atmosfera accogliente e tradizione dal 1990.">
+    <meta property="og:image" content="IMG_3609.jpeg">
+
+    <!-- --- ICONA DEL SITO (FAVICON) --- -->
+    <!-- Punta al file logo.svg che trovi qui sotto -->
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <link rel="apple-touch-icon" href="logo.svg">
+
+    <!-- Librerie Esterne -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            beige: '#F9F7F0',   /* C1 */
+                            green: '#9ACD32',   /* C2 */
+                            red: '#9E2A2B',     /* C3 */
+                            dark: '#1a1a1a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
         /* --- FONT LOCALI --- */
-        /* Assicurati che i file dei font siano nella stessa cartella di questo file HTML */
-
-        /* Font Script (Titoli/Logo) - Motterdam */
         @font-face {
             font-family: 'Motterdam';
             src: url('Motterdam.ttf') format('truetype'),
@@ -35,8 +63,6 @@
             font-style: normal;
             font-display: swap;
         }
-        
-        /* Font Geometrico (Testi/Menu) - Caviar Dreams */
         @font-face {
             font-family: 'CaviarDreams';
             src: url('CaviarDreams.ttf') format('truetype');
@@ -66,67 +92,30 @@
             font-display: swap;
         }
 
-        /* Classi per i Font */
-        .font-script {
-            font-family: 'Motterdam', cursive; 
-        }
-        
-        .font-geo {
-            font-family: 'CaviarDreams', sans-serif;
-        }
+        .font-script { font-family: 'Motterdam', cursive; }
+        .font-geo { font-family: 'CaviarDreams', sans-serif; }
 
-        /* Immagine Hero Locale */
         .hero-bg {
             background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('IMG_3609.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
-        .gallery-img {
-            transition: transform 0.5s ease;
-        }
-        .gallery-img:hover {
-            transform: scale(1.05);
-        }
         
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #F9F7F0; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #9E2A2B; 
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #9ACD32; 
-        }
+        .gallery-img { transition: transform 0.5s ease; }
+        .gallery-img:hover { transform: scale(1.05); }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F9F7F0; }
+        ::-webkit-scrollbar-thumb { background: #9E2A2B; }
+        ::-webkit-scrollbar-thumb:hover { background: #9ACD32; }
 
-        .fade-in {
-            animation: fadeIn 1s ease-in;
-        }
+        .fade-in { animation: fadeIn 1s ease-in; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            beige: '#F9F7F0',   /* C1 */
-                            green: '#9ACD32',   /* C2 */
-                            red: '#9E2A2B',     /* C3 */
-                            dark: '#1a1a1a'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 <body class="bg-brand-beige text-gray-800 font-geo antialiased">
 
@@ -135,23 +124,17 @@
         <div class="w-full px-4 sm:px-6 lg:px-8 relative">
             <div class="flex justify-between items-center h-20">
                 
-                <!-- SINISTRA: Gruppo Logo + Scritta Marino -->
-                <!-- items-center per allineare MARINO a metà altezza del logo -->
-                <!-- gap-12 per spostare MARINO più a destra -->
+                <!-- Logo Nav -->
                 <div class="flex-shrink-0 flex items-center gap-12 z-20">
-                    <!-- Logo -->
                     <a href="#" class="flex flex-col items-center leading-none group">
                         <span class="font-script text-4xl text-black tracking-wide group-hover:text-brand-red transition-colors">al Cantuccio</span>
                         <span class="font-geo text-[10px] text-black font-bold tracking-[0.2em] mt-1 uppercase">RISTORANTE PIZZERIA</span>
                     </a>
-                    
-                    <!-- Scritta MARINO (Font B, Maiuscolo, Verde, Size SM come il menu) -->
                     <span class="font-geo font-bold text-brand-green uppercase text-sm tracking-widest">MARINO</span>
                 </div>
                 
-                <!-- DESTRA: Desktop Menu & Mobile Button -->
+                <!-- Menu -->
                 <div class="flex items-center z-20">
-                    <!-- Desktop Menu -->
                     <div class="hidden md:flex space-x-8 items-center">
                         <a href="#home" class="text-gray-600 hover:text-brand-green transition-colors text-sm uppercase tracking-widest font-bold">Home</a>
                         <a href="#about" class="text-gray-600 hover:text-brand-green transition-colors text-sm uppercase tracking-widest font-bold">Chi Siamo</a>
@@ -159,8 +142,6 @@
                         <a href="#gallery" class="text-gray-600 hover:text-brand-green transition-colors text-sm uppercase tracking-widest font-bold">Galleria</a>
                         <a href="#reservation" class="px-5 py-2 bg-brand-red text-brand-beige hover:bg-brand-green transition-all duration-300 text-sm uppercase tracking-widest font-bold rounded-full">Prenota</a>
                     </div>
-
-                    <!-- Mobile menu button -->
                     <div class="md:hidden flex items-center ml-4">
                         <button id="mobile-menu-btn" class="text-gray-800 hover:text-brand-green focus:outline-none">
                             <i class="fas fa-bars text-2xl"></i>
@@ -171,7 +152,7 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Panel -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-brand-beige border-t border-gray-200">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
                 <a href="#home" class="block px-3 py-2 text-base font-bold text-gray-700 hover:text-brand-green">Home</a>
@@ -183,56 +164,33 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero-bg h-screen flex items-center justify-center text-center px-4">
         <div class="max-w-4xl mx-auto pt-16 fade-in">
-            <!-- Logo Grande (Bianco) - Identico al menu ma bianco -->
-            <h1 class="font-script text-8xl md:text-9xl text-white mb-0 leading-tight drop-shadow-lg" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
-                al Cantuccio
-            </h1>
-            <p class="font-geo text-2xl md:text-3xl text-white mb-8 font-bold tracking-[0.2em] drop-shadow-md uppercase mt-2">
-                Ristorante Pizzeria
-            </p>
-            
+            <h1 class="font-script text-8xl md:text-9xl text-white mb-0 leading-tight drop-shadow-lg" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">al Cantuccio</h1>
+            <p class="font-geo text-2xl md:text-3xl text-white mb-8 font-bold tracking-[0.2em] drop-shadow-md uppercase mt-2">Ristorante Pizzeria</p>
             <div class="flex flex-col sm:flex-row gap-6 justify-center mt-8">
-                <a href="#menu" class="px-10 py-4 bg-brand-green text-white font-bold uppercase tracking-widest hover:bg-white hover:text-brand-green transition-colors duration-300 shadow-lg rounded-sm font-geo">
-                    Scopri il Menu
-                </a>
-                <a href="#reservation" class="px-10 py-4 bg-brand-red text-white font-bold uppercase tracking-widest hover:bg-white hover:text-brand-red transition-colors duration-300 shadow-lg rounded-sm font-geo">
-                    Prenota Tavolo
-                </a>
+                <a href="#menu" class="px-10 py-4 bg-brand-green text-white font-bold uppercase tracking-widest hover:bg-white hover:text-brand-green transition-colors duration-300 shadow-lg rounded-sm font-geo">Scopri il Menu</a>
+                <a href="#reservation" class="px-10 py-4 bg-brand-red text-white font-bold uppercase tracking-widest hover:bg-white hover:text-brand-red transition-colors duration-300 shadow-lg rounded-sm font-geo">Prenota Tavolo</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section (Colore C3 Rosso, Testo Bianco) -->
+    <!-- About -->
     <section id="about" class="py-20 bg-brand-red text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="relative p-4">
-                    <!-- Foto acquerello locale -->
                     <img src="al-cantuccio-marino-grazie.jpg" alt="Il Cantuccio Esterno" class="w-full relative z-10 object-cover h-[500px]">
                 </div>
                 <div>
-                    <!-- Titolo con linea verde attaccata -->
                     <h3 class="font-script text-5xl text-brand-beige mb-6 border-b-2 border-brand-green inline-block pb-2">Chi Siamo</h3>
-                    
-                    <!-- Testo -->
                     <div class="font-geo text-lg leading-relaxed space-y-6 font-light">
-                        <p>
-                            ‘’Al Cantuccio’’ nasce con i nostri Paola e Pio, dal 1990 il cuore pulsante dell’attività.
-                        </p>
-                        <p>
-                            Il ‘’cantuccio’’ è un angolo accogliente.
-                        </p>
-                        <p>
-                            Questo è ciò che cerchiamo di ottenere con la nostra proposta, che mira a rendere omaggio all’eredità culinaria locale.
-                        </p>
-                        <p>
-                            Dalla pasta fatta a mano alla selezione di vini dei Castelli Romani, il nostro concetto di ristorazione rimane radicato nella tradizione.
-                        </p>
+                        <p>‘’Al Cantuccio’’ nasce con i nostri Paola e Pio, dal 1990 il cuore pulsante dell’attività.</p>
+                        <p>Il ‘’cantuccio’’ è un angolo accogliente.</p>
+                        <p>Questo è ciò che cerchiamo di ottenere con la nostra proposta, che mira a rendere omaggio all’eredità culinaria locale.</p>
+                        <p>Dalla pasta fatta a mano alla selezione di vini dei Castelli Romani, il nostro concetto di ristorazione rimane radicato nella tradizione.</p>
                     </div>
-
                     <div class="flex items-center gap-6 mt-8">
                         <div class="border-l-4 border-brand-green pl-4">
                             <p class="font-script text-4xl text-brand-beige">Dal 1990</p>
@@ -244,48 +202,35 @@
         </div>
     </section>
 
-    <!-- Menu Section (Sfondo C1 Beige) -->
+    <!-- Menu -->
     <section id="menu" class="py-20 bg-brand-beige relative overflow-hidden">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
                 <h2 class="font-script text-7xl text-brand-red mb-4">Il Nostro Menu</h2>
                 <div class="w-32 h-1 bg-brand-green mx-auto rounded-full"></div>
             </div>
-
-            <!-- Menu Tabs -->
-            <div class="flex flex-wrap justify-center gap-3 mb-12" id="menu-tabs">
-                <!-- Tabs generati via JS -->
-            </div>
-
-            <!-- Menu Items Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-16" id="menu-container">
-                <!-- Items generati via JS -->
-            </div>
+            <div class="flex flex-wrap justify-center gap-3 mb-12" id="menu-tabs"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-16" id="menu-container"></div>
         </div>
     </section>
     
-    <!-- Gallery Section (Sfondo VERDE) -->
+    <!-- Gallery -->
     <section id="gallery" class="py-20 bg-brand-green">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h3 class="font-script text-6xl text-white mb-2">Galleria</h3>
                 <p class="font-geo text-brand-dark uppercase tracking-widest font-bold">I nostri scatti</p>
             </div>
-            
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <!-- Photo 1 Locale -->
                 <div class="overflow-hidden h-64 relative group border-2 border-brand-beige shadow-lg">
                     <img src="unnamed.webp" alt="Pasta Romana" class="gallery-img w-full h-full object-cover">
                 </div>
-                <!-- Photo 2 Locale -->
                 <div class="overflow-hidden h-64 relative group border-2 border-brand-beige shadow-lg">
                     <img src="2020-11-05 (1).webp" alt="Carne" class="gallery-img w-full h-full object-cover">
                 </div>
-                <!-- Photo 3 Locale -->
                 <div class="overflow-hidden h-64 relative group border-2 border-brand-beige shadow-lg">
                     <img src="unnamed (1).webp" alt="Vino e Brocca" class="gallery-img w-full h-full object-cover">
                 </div>
-                <!-- Photo 4 Locale -->
                 <div class="overflow-hidden h-64 relative group border-2 border-brand-beige shadow-lg">
                     <img src="2020-11-05.webp" alt="Sala Interna" class="gallery-img w-full h-full object-cover">
                 </div>
@@ -293,405 +238,92 @@
         </div>
     </section>
 
-    <!-- Reservation Section (Sfondo Beige con accenti) -->
+    <!-- Reservation -->
     <section id="reservation" class="py-20 bg-brand-beige relative border-t border-gray-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row gap-12">
-                
-                <!-- Contact Info Sidebar -->
                 <div class="md:w-1/3">
                     <h3 class="font-script text-6xl text-brand-red mb-8">Contatti</h3>
-                    
                     <div class="space-y-8 font-geo text-lg">
                         <div class="flex items-start space-x-4 group">
-                            <div class="w-10 h-10 rounded-full bg-brand-green flex items-center justify-center text-white group-hover:bg-brand-red transition-colors">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
+                            <div class="w-10 h-10 rounded-full bg-brand-green flex items-center justify-center text-white group-hover:bg-brand-red transition-colors"><i class="fas fa-map-marker-alt"></i></div>
                             <div>
                                 <p class="font-bold text-brand-dark">Indirizzo</p>
-                                <p class="text-gray-600">Piazza Risorgimento 6</p>
-                                <p class="text-gray-600">00047 Marino (RM)</p>
+                                <p class="text-gray-600">Piazza Risorgimento 6, Marino (RM)</p>
                             </div>
                         </div>
-                        
                         <div class="flex items-start space-x-4 group">
-                            <div class="w-10 h-10 rounded-full bg-brand-green flex items-center justify-center text-white group-hover:bg-brand-red transition-colors">
-                                <i class="fas fa-phone"></i>
-                            </div>
+                            <div class="w-10 h-10 rounded-full bg-brand-green flex items-center justify-center text-white group-hover:bg-brand-red transition-colors"><i class="fas fa-phone"></i></div>
                             <div>
                                 <p class="font-bold text-brand-dark">Recapiti</p>
-                                <p class="text-gray-600">Fisso: 06 9388906</p>
-                                <p class="text-gray-600">Mobile: 392 1384418</p>
+                                <p class="text-gray-600">06 9388906 / 392 1384418</p>
                             </div>
                         </div>
-
                         <div class="flex items-start space-x-4 group">
-                            <div class="w-10 h-10 rounded-full bg-brand-green flex items-center justify-center text-white group-hover:bg-brand-red transition-colors">
-                                <i class="fas fa-clock"></i>
-                            </div>
+                            <div class="w-10 h-10 rounded-full bg-brand-green flex items-center justify-center text-white group-hover:bg-brand-red transition-colors"><i class="fas fa-clock"></i></div>
                             <div>
                                 <p class="font-bold text-brand-dark">Orari</p>
-                                <p class="text-gray-600">Mar - Ven: 19:30 - 23:00</p>
-                                <p class="text-gray-600">Sab: 12:00 - 15:00 / 19:30 - 23:00</p>
-                                <p class="text-gray-600">Dom: 12:00 - 15:00</p>
+                                <p class="text-gray-600">Mar-Ven: 19:30-23:00</p>
+                                <p class="text-gray-600">Sab: 12-15 / 19:30-23</p>
+                                <p class="text-gray-600">Dom: 12-15</p>
                                 <p class="text-brand-red font-bold mt-1">Lunedì Chiuso</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Reservation Form -->
                 <div class="md:w-2/3 bg-white p-8 md:p-12 rounded-xl shadow-xl border-t-4 border-brand-green">
                     <div class="text-center mb-10">
                         <h2 class="font-geo text-3xl font-bold text-brand-dark mb-2 uppercase tracking-wider">Prenota un Tavolo</h2>
                         <p class="text-gray-500 font-light">Compila il modulo per inviare la richiesta su WhatsApp.</p>
                     </div>
-
                     <form id="reservation-form" class="space-y-6 font-geo" onsubmit="handleReservation(event)">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2 uppercase">Nome</label>
-                                <input name="name" type="text" required class="w-full bg-brand-beige border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition-colors" placeholder="Mario Rossi">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2 uppercase">Telefono</label>
-                                <input name="phone" type="tel" required class="w-full bg-brand-beige border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition-colors" placeholder="+39 ...">
-                            </div>
+                            <div><label class="block text-sm font-bold text-gray-700 mb-2 uppercase">Nome</label><input name="name" type="text" required class="w-full bg-brand-beige border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition-colors"></div>
+                            <div><label class="block text-sm font-bold text-gray-700 mb-2 uppercase">Telefono</label><input name="phone" type="tel" required class="w-full bg-brand-beige border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition-colors"></div>
                         </div>
-
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2 uppercase">Data</label>
-                                <input name="date" type="date" required class="w-full bg-brand-beige border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition-colors">
-                            </div>
+                            <div><label class="block text-sm font-bold text-gray-700 mb-2 uppercase">Data</label><input name="date" type="date" required class="w-full bg-brand-beige border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition-colors"></div>
                             <div>
                                 <label class="block text-sm font-bold text-gray-700 mb-2 uppercase">Orario</label>
                                 <select name="time" class="w-full bg-brand-beige border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition-colors">
-                                    <option>12:00</option>
-                                    <option>12:30</option>
-                                    <option>13:00</option>
-                                    <option>13:30</option>
-                                    <option>19:30</option>
-                                    <option>20:00</option>
-                                    <option>20:30</option>
-                                    <option>21:00</option>
-                                    <option>21:30</option>
+                                    <option>12:00</option><option>12:30</option><option>13:00</option><option>13:30</option>
+                                    <option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option><option>21:30</option>
                                 </select>
                             </div>
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2 uppercase">Ospiti</label>
-                                <input name="guests" type="number" min="1" required class="w-full bg-brand-beige border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition-colors" placeholder="N°">
-                            </div>
+                            <div><label class="block text-sm font-bold text-gray-700 mb-2 uppercase">Ospiti</label><input name="guests" type="number" min="1" required class="w-full bg-brand-beige border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition-colors"></div>
                         </div>
-
-                        <div>
-                            <label class="block text-sm font-bold text-gray-700 mb-2 uppercase">Richieste Speciali</label>
-                            <textarea name="notes" rows="3" class="w-full bg-brand-beige border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition-colors" placeholder="Allergie, seggiolone, tavolo esterno..."></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full bg-brand-green text-white font-bold text-lg py-4 rounded-full hover:bg-brand-red transition-all duration-300 uppercase tracking-widest flex justify-center items-center gap-3 shadow-lg">
-                            <i class="fab fa-whatsapp text-2xl"></i> Invia su WhatsApp
-                        </button>
+                        <div><label class="block text-sm font-bold text-gray-700 mb-2 uppercase">Richieste Speciali</label><textarea name="notes" rows="3" class="w-full bg-brand-beige border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition-colors"></textarea></div>
+                        <button type="submit" class="w-full bg-brand-green text-white font-bold text-lg py-4 rounded-full hover:bg-brand-red transition-all duration-300 uppercase tracking-widest flex justify-center items-center gap-3 shadow-lg"><i class="fab fa-whatsapp text-2xl"></i> Invia su WhatsApp</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer (Sfondo C3 Rosso) -->
+    <!-- Footer -->
     <footer class="bg-brand-red py-12 border-t-4 border-brand-green text-brand-beige">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <p class="font-script text-6xl mb-6">al Cantuccio</p>
             <div class="flex justify-center space-x-8 mb-8">
-                <a href="https://www.facebook.com/alcantuccio.marino/?locale=it_IT" target="_blank" rel="noopener noreferrer" class="text-brand-beige hover:text-brand-green transition-colors transform hover:scale-110"><i class="fab fa-facebook-f text-2xl"></i></a>
-                <a href="https://www.instagram.com/al_cantucciomarino/" target="_blank" rel="noopener noreferrer" class="text-brand-beige hover:text-brand-green transition-colors transform hover:scale-110"><i class="fab fa-instagram text-2xl"></i></a>
+                <a href="https://www.facebook.com/alcantuccio.marino/?locale=it_IT" target="_blank" class="text-brand-beige hover:text-brand-green transition-colors transform hover:scale-110"><i class="fab fa-facebook-f text-2xl"></i></a>
+                <a href="https://www.instagram.com/al_cantucciomarino/" target="_blank" class="text-brand-beige hover:text-brand-green transition-colors transform hover:scale-110"><i class="fab fa-instagram text-2xl"></i></a>
                 <a href="#" class="text-brand-beige hover:text-brand-green transition-colors transform hover:scale-110"><i class="fab fa-tripadvisor text-2xl"></i></a>
             </div>
             <p class="font-geo text-sm opacity-80">&copy; 2025 Al Cantuccio Marino. Tutti i diritti riservati.</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Scripts -->
     <script>
-        // Menu Data
-        const menuData = {
-            antipasti: [
-                { name: "Montanaro", price: "€16", desc: "Misto di salumi, formaggio, ricotta, mozzarella" },
-                { name: "Tagliere Contadino", price: "€16", desc: "Porchetta, verdure grigliate, salamino, ricotta, frittatine, mozzarella" },
-                { name: "Tagliere Ortolano", price: "€13", desc: "Verdure grigliate, ricotta, frittatine, mozzarella" },
-                { name: "Bruschette Miste", price: "€6", desc: "Pomodoro, porcini, crudo, patè di olive" },
-                { name: "Supplì", price: "€2", desc: "Classico romano" },
-                { name: "Fiori di Zucca", price: "€2", desc: "Pastellati e fritti" },
-                { name: "Filetti di Baccalà", price: "€4", desc: "Pastellati e fritti" },
-                { name: "Olive Ascolane (5)", price: "€3", desc: "" },
-                { name: "Crocchette di Patate (5)", price: "€3", desc: "" },
-                { name: "Misto di Fritti", price: "€8", desc: "1 fiore di zucca, 1 supplì, 2 olive ascolane, 2 crocchette, verdure pastellate" }
-            ],
-            primi: [
-                { name: "Strozzapreti", price: "€12", desc: "Con zucchine, pomodorini e provola affumicata" },
-                { name: "Gnocchetti alla Sorrentina", price: "€12", desc: "Gnocchetti di patate con pomodoro e mozzarella" },
-                { name: "Rigatoni all'Amatriciana", price: "€12", desc: "Guanciale, pomodoro, pecorino" },
-                { name: "Rigatoni alla Pajata", price: "€12", desc: "Tradizione Romana" },
-                { name: "Tonnarelli Cacio e Pepe", price: "€12", desc: "Pecorino Romano e pepe nero" },
-                { name: "Pasta Brucio", price: "€12", desc: "Paccheri con verdure croccanti, pinoli, mela e peperoncino" },
-                { name: "Fettuccine ai Porcini", price: "€16", desc: "Fatte a mano" },
-                { name: "Pappardelle al Cinghiale", price: "€16", desc: "Fatte a mano" },
-                { name: "Cannelloni Tradizionali", price: "€14", desc: "Con ripieno di carne" },
-                { name: "Tonnarelli ai Carciofi", price: "€14", desc: "" },
-                { name: "Polenta Spuntature e Salsiccia", price: "€14", desc: "Con sugo di pomodoro, spuntature di maiale e salsiccia" }
-            ],
-            secondi: [
-                { name: "Filetto di Scottona", price: "€20", desc: "" },
-                { name: "Filetto di Scottona ai Porcini", price: "€28", desc: "" },
-                { name: "Tagliata di Scottona", price: "€18", desc: "Scegli tra: Rosmarino, Aceto Balsamico, o Lardo di Colonnata" },
-                { name: "Tagliata ai Funghi Porcini", price: "€20", desc: "Tagliata di Scottona" },
-                { name: "Tagliata di Pollo", price: "€10", desc: "Con miele e limone" },
-                { name: "Straccetti ai Funghi Porcini", price: "€13", desc: "" },
-                { name: "Straccetti Rucola e Pachino", price: "€12", desc: "" },
-                { name: "Straccetti al Radicchio", price: "€12", desc: "" },
-                { name: "Saltimbocca alla Romana", price: "€12", desc: "" },
-                { name: "Scaloppine al Limone", price: "€12", desc: "" },
-                { name: "Scamorza Porcini e Tartufo", price: "€13", desc: "" },
-                { name: "Piatto Misto", price: "€20", desc: "Costolette di abbacchio fritte, straccetti al radicchio, saltimbocca, patate arrosto e cicoria" },
-                { name: "Scamorza Miele e Noci", price: "€10", desc: "" },
-                { name: "Costatine di Abbacchio Fritto", price: "€20", desc: "" }
-            ],
-            contorni: [
-                { name: "Insalata Pere e Pecorino", price: "€7", desc: "Con melograno" },
-                { name: "Insalata Champignon", price: "€7", desc: "Con scaglie di parmigiano" },
-                { name: "Radicchio", price: "€7", desc: "Con miele, noci e aceto balsamico" },
-                { name: "Patate Arrosto", price: "€5", desc: "" },
-                { name: "Patate Fritte", price: "€5", desc: "" },
-                { name: "Insalata Rucola e Pomodorini", price: "€5", desc: "" },
-                { name: "Cicoria Ripassata", price: "€5", desc: "Saltata in padella con aglio, olio e peperoncino" }
-            ],
-            pizze: [
-                { name: "Margherita", price: "€7", desc: "" },
-                { name: "Capricciosa", price: "€10", desc: "" },
-                { name: "Boscaiola", price: "€10", desc: "Mozzarella, funghi, salsiccia" },
-                { name: "Ortolana", price: "€10", desc: "Pomodoro, mozzarella, misto di verdure" },
-                { name: "Cicoria e Salsiccia", price: "€10", desc: "" },
-                { name: "Parmigiana", price: "€10", desc: "Mozzarella, pomodoro, melanzane, parmigiano" },
-                { name: "4 Formaggi", price: "€10", desc: "Con noci e miele" },
-                { name: "Rughetta, Bresaola e Parmigiano", price: "€12", desc: "" },
-                { name: "Provola e Speck", price: "€10", desc: "" },
-                { name: "Cacciatora", price: "€12", desc: "Pom, mozz, salamino, funghi porcini" },
-                { name: "Al Cantuccio", price: "€12", desc: "Rughetta, pachino, bufala, tonno" },
-                { name: "Cacio e Pepe", price: "€10", desc: "Mozzarella, pecorino, pepe" },
-                { name: "Carbonara", price: "€10", desc: "Mozzarella, uovo, parmigiano, pepe" },
-                { name: "Amatriciana", price: "€10", desc: "Mozz, pom, pancetta, pecorino" },
-                { name: "Cinghiale", price: "€12", desc: "Pom, mozz, cinghiale, pecorino" },
-                { name: "Norcia", price: "€13", desc: "Mozz, salsiccia, tartufo, funghi porcini" },
-                { name: "Rocca di Papa", price: "€12", desc: "Mozz, pom, funghi misti, ricotta salata" }
-            ],
-            calzoni_focacce: [
-                { name: "Calzone Cotto e Zucchine", price: "€10", desc: "" },
-                { name: "Calzone Casatiello", price: "€10", desc: "Mozz, melanzane, salame piccante, ricotta, olive" },
-                { name: "Calzone Cotto e Carciofi", price: "€10", desc: "" },
-                { name: "Calzone Funghi e Prosciutto", price: "€10", desc: "Crudo o cotto" },
-                { name: "Calzone Patate e Salsiccia", price: "€10", desc: "" },
-                { name: "Focaccia Semplice", price: "€3", desc: "" },
-                { name: "Focaccia al Crudo", price: "€10", desc: "" },
-                { name: "Focaccia Radicchio", price: "€10", desc: "Noci, parmigiano e balsamico" },
-                { name: "Focaccia con Porchetta", price: "€10", desc: "Ripiena" },
-                { name: "Focaccia Cicoria e Salsiccia", price: "€10", desc: "Ripiena" }
-            ],
-            dolci: [
-                { name: "Tiramisù Classico", price: "€5", desc: "" },
-                { name: "Torta di Mele", price: "€5", desc: "Alla cannella con gelato alla crema" },
-                { name: "Torta Pere e Cioccolato", price: "€5", desc: "" },
-                { name: "Zuppa Inglese", price: "€5", desc: "" },
-                { name: "Focaccia Mele e Cannella", price: "€16", desc: "Dolce focaccia da condividere" },
-                { name: "Focaccia Pere e Ricotta", price: "€16", desc: "Con cioccolato a scaglie" },
-                { name: "Focaccia Nutella e Cocco", price: "€16", desc: "" },
-                { name: "Focaccia della Nonna", price: "€16", desc: "Ripiena con crema e pinoli" }
-            ],
-            vini_bianchi: [
-                { name: "Vino della Casa (1 Lt)", price: "€6", desc: "Locale artigianale" },
-                { name: "Vino della Casa (1/2 Lt)", price: "€4", desc: "Locale artigianale" },
-                { name: "Vino della Casa (1/4 Lt)", price: "€3", desc: "Locale artigianale" },
-                { name: "Dino Limiti Sfuso (1 Lt)", price: "€6", desc: "" },
-                { name: "Dino Limiti Sfuso (1/2 Lt)", price: "€4", desc: "" },
-                { name: "Dino Limiti Sfuso (1/4 Lt)", price: "€3", desc: "" },
-                { name: "Romanella Bianca", price: "€12", desc: "" },
-                { name: "Ribolla Gialla", price: "€20", desc: "Venezia Giulia" },
-                { name: "Friulano", price: "€15", desc: "Villa Danieli" },
-                { name: "Satrico", price: "€20", desc: "Casale del Giglio" },
-                { name: "Greco di Tufo", price: "€20", desc: "Feudi di San Gregorio" },
-                { name: "Gotto d'oro", price: "€18", desc: "Marino Superiore" },
-                { name: "Pecorino Biologico", price: "€20", desc: "Cantina Tollo" },
-                { name: "Falanghina", price: "€20", desc: "Feudi di San Gregorio" },
-                { name: "Falanghina Beneventano", price: "€18", desc: "" },
-                { name: "Moscato Giallo", price: "€20", desc: "Dino Limiti" },
-                { name: "People", price: "€20", desc: "Poggio Le Volpi" }
-            ],
-            vini_rossi: [
-                { name: "Vino della Casa (1 Lt)", price: "€6", desc: "Locale artigianale" },
-                { name: "Vino della Casa (1/2 Lt)", price: "€4", desc: "Locale artigianale" },
-                { name: "Vino della Casa (1/4 Lt)", price: "€3", desc: "Locale artigianale" },
-                { name: "Dino Limiti Sfuso (1 Lt)", price: "€10", desc: "" },
-                { name: "Dino Limiti Sfuso (1/2 Lt)", price: "€6", desc: "" },
-                { name: "Dino Limiti Sfuso (1/4 Lt)", price: "€4", desc: "" },
-                { name: "Romanella Rossa", price: "€12", desc: "" },
-                { name: "Montefalco Sagrantino", price: "€24", desc: "Vignabaldo Umbra" },
-                { name: "Nero d'Avola", price: "€18", desc: "Fonte Frontini" },
-                { name: "Morellino di Scansano", price: "€20", desc: "La Rasola" },
-                { name: "Colle del Turchetto", price: "€20", desc: "Dino Limiti" },
-                { name: "Barolo", price: "€40", desc: "Antica Cantina di Calosso" },
-                { name: "Shiraz", price: "€20", desc: "Casale del Giglio" },
-                { name: "Chianti", price: "€18", desc: "Torre delle Grazie" },
-                { name: "Vinea Domini", price: "€18", desc: "" },
-                { name: "Col di Sasso", price: "€16", desc: "Banfi" },
-                { name: "Brunello di Montalcino", price: "€35", desc: "Predella" },
-                { name: "Rosse Masserie", price: "€18", desc: "Negroamaro Salento" },
-                { name: "Santa Cristina", price: "€18", desc: "Toscana" },
-                { name: "Ninfeo", price: "€12", desc: "Cannonau di Sardegna" },
-                { name: "Amarone della Valpolicella", price: "€28", desc: "Le Colline dei Filari" },
-                { name: "Barbera d'Asti", price: "€18", desc: "Medaina" },
-                { name: "Refosco", price: "€18", desc: "Paron Mario" },
-                { name: "Barbera d'Asti", price: "€12", desc: "Antica Cantina di Calosso" },
-                { name: "Cantalupi", price: "€18", desc: "Tenute Conti Zecca" },
-                { name: "Brunello di Montalcino", price: "€35", desc: "Sensi" },
-                { name: "Montepulciano d'Abruzzo", price: "€18", desc: "Predella" }
-            ],
-            bevande: [
-                { name: "Birra Nastro Azzurro 62cl", price: "€6", desc: "" },
-                { name: "Birra Nastro Azzurro 33cl", price: "€4", desc: "" },
-                { name: "Birra Peroni Gran Riserva Rossa 33cl", price: "€4", desc: "" },
-                { name: "Birra Peroni Doppio Malto 33cl", price: "€4", desc: "" },
-                { name: "Birra Birba Artigianale 33cl", price: "€6", desc: "" },
-                { name: "Coca Cola Grande", price: "€5", desc: "" },
-                { name: "Acqua 1 Lt", price: "€2", desc: "" },
-                { name: "Bibite in lattina", price: "€2", desc: "" }
-            ]
-        };
-
-        // Render Menu
-        function renderMenu(category) {
-            const container = document.getElementById('menu-container');
-            const items = menuData[category];
-            
-            if (!items) return;
-
-            container.innerHTML = items.map(item => `
-                <div class="flex justify-between items-start border-b border-gray-300 pb-4 hover:bg-white p-4 rounded transition-all shadow-sm hover:shadow-md group">
-                    <div class="flex-1 pr-4">
-                        <h4 class="text-xl font-geo font-bold text-brand-green mb-1 group-hover:text-brand-red transition-colors">${item.name}</h4>
-                        ${item.desc ? `<p class="text-gray-500 text-sm font-light italic">${item.desc}</p>` : ''}
-                    </div>
-                    <span class="text-brand-dark font-bold text-xl whitespace-nowrap">${item.price}</span>
-                </div>
-            `).join('');
-
-            // Update tabs
-            document.querySelectorAll('.menu-tab').forEach(tab => {
-                tab.classList.remove('bg-brand-green', 'text-white', 'shadow-lg', 'transform', 'scale-105');
-                tab.classList.add('text-gray-500', 'bg-white', 'border', 'border-gray-200');
-                if(tab.dataset.category === category) {
-                    tab.classList.remove('text-gray-500', 'bg-white', 'border', 'border-gray-200');
-                    tab.classList.add('bg-brand-green', 'text-white', 'shadow-lg', 'transform', 'scale-105');
-                }
-            });
-        }
-
-        // Form Handling - WhatsApp Integration with Better Encoding
-        function handleReservation(e) {
-            e.preventDefault();
-            
-            const form = e.target;
-            const btn = form.querySelector('button');
-            const originalText = btn.innerHTML;
-            
-            // Prendi i dati dal form
-            const name = form.querySelector('[name="name"]').value;
-            const phone = form.querySelector('[name="phone"]').value;
-            const date = form.querySelector('[name="date"]').value;
-            const time = form.querySelector('[name="time"]').value;
-            const guests = form.querySelector('[name="guests"]').value;
-            const notes = form.querySelector('[name="notes"]').value;
-
-            // Formatta la data in modo più leggibile
-            const dateObj = new Date(date);
-            const dateFormatted = dateObj.toLocaleDateString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-
-            // Crea un messaggio colloquiale/umano
-            const rawMessage = `Ciao! Vorrei prenotare un tavolo per ${guests} persone a nome ${name} per ${dateFormatted} alle ore ${time}. Il mio numero è ${phone}.${notes ? ' Note aggiuntive: ' + notes : ''}`;
-
-            // Codifica tutto correttamente per l'URL (gestisce spazi, emoji, accenti)
-            const encodedMessage = encodeURIComponent(rawMessage);
-
-            // Numero del ristorante (Mobile per WhatsApp)
-            const restaurantNumber = "393921384418"; 
-
-            const whatsappUrl = `https://wa.me/${restaurantNumber}?text=${encodedMessage}`;
-
-            // Feedback visivo
-            btn.innerHTML = '<i class="fas fa-check"></i> Apro WhatsApp...';
-            btn.classList.remove('bg-brand-green');
-            btn.classList.add('bg-gray-800');
-            
-            // Apri WhatsApp
-            window.open(whatsappUrl, '_blank');
-            
-            // Reset dopo 3 secondi
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.classList.add('bg-brand-green');
-                btn.classList.remove('bg-gray-800');
-                form.reset();
-            }, 3000);
-        }
-
-        // Generate Tabs
-        function initMenu() {
-            const tabContainer = document.getElementById('menu-tabs');
-            const categories = [
-                { id: 'antipasti', label: 'Antipasti' },
-                { id: 'primi', label: 'Primi' },
-                { id: 'secondi', label: 'Secondi' },
-                { id: 'contorni', label: 'Contorni' },
-                { id: 'pizze', label: 'Pizze' },
-                { id: 'calzoni_focacce', label: 'Calzoni' },
-                { id: 'vini_bianchi', label: 'Vini Bianchi' },
-                { id: 'vini_rossi', label: 'Vini Rossi' },
-                { id: 'bevande', label: 'Bevande' },
-                { id: 'dolci', label: 'Dolci' }
-            ];
-
-            tabContainer.innerHTML = categories.map(cat => `
-                <button 
-                    class="menu-tab px-6 py-2 rounded-full font-bold uppercase text-sm transition-all duration-300 focus:outline-none m-1" 
-                    onclick="renderMenu('${cat.id}')"
-                    data-category="${cat.id}">
-                    ${cat.label}
-                </button>
-            `).join('');
-
-            // Render first category by default
-            renderMenu('antipasti');
-        }
-
-        // Mobile Menu Toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-md');
-            } else {
-                nav.classList.remove('shadow-md');
-            }
-        });
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', initMenu);
-
+        const menuData={antipasti:[{name:"Montanaro",price:"€16",desc:"Misto di salumi, formaggio, ricotta, mozzarella"},{name:"Tagliere Contadino",price:"€16",desc:"Porchetta, verdure grigliate, salamino, ricotta, frittatine, mozzarella"},{name:"Tagliere Ortolano",price:"€13",desc:"Verdure grigliate, ricotta, frittatine, mozzarella"},{name:"Bruschette Miste",price:"€6",desc:"Pomodoro, porcini, crudo, patè di olive"},{name:"Supplì",price:"€2",desc:"Classico romano"},{name:"Fiori di Zucca",price:"€2",desc:"Pastellati e fritti"},{name:"Filetti di Baccalà",price:"€4",desc:"Pastellati e fritti"},{name:"Olive Ascolane (5)",price:"€3",desc:""},{name:"Crocchette di Patate (5)",price:"€3",desc:""},{name:"Misto di Fritti",price:"€8",desc:"1 fiore di zucca, 1 supplì, 2 olive ascolane, 2 crocchette, verdure pastellate"}],primi:[{name:"Strozzapreti",price:"€12",desc:"Con zucchine, pomodorini e provola affumicata"},{name:"Gnocchetti alla Sorrentina",price:"€12",desc:"Gnocchetti di patate con pomodoro e mozzarella"},{name:"Rigatoni all'Amatriciana",price:"€12",desc:"Guanciale, pomodoro, pecorino"},{name:"Rigatoni alla Pajata",price:"€12",desc:"Tradizione Romana"},{name:"Tonnarelli Cacio e Pepe",price:"€12",desc:"Pecorino Romano e pepe nero"},{name:"Pasta Brucio",price:"€12",desc:"Paccheri con verdure croccanti, pinoli, mela e peperoncino"},{name:"Fettuccine ai Porcini",price:"€16",desc:"Fatte a mano"},{name:"Pappardelle al Cinghiale",price:"€16",desc:"Fatte a mano"},{name:"Cannelloni Tradizionali",price:"€14",desc:"Con ripieno di carne"},{name:"Tonnarelli ai Carciofi",price:"€14",desc:""},{name:"Polenta Spuntature e Salsiccia",price:"€14",desc:"Con sugo di pomodoro, spuntature di maiale e salsiccia"}],secondi:[{name:"Filetto di Scottona",price:"€20",desc:""},{name:"Filetto di Scottona ai Porcini",price:"€28",desc:""},{name:"Tagliata di Scottona",price:"€18",desc:"Scegli tra: Rosmarino, Aceto Balsamico, o Lardo di Colonnata"},{name:"Tagliata ai Funghi Porcini",price:"€20",desc:"Tagliata di Scottona"},{name:"Tagliata di Pollo",price:"€10",desc:"Con miele e limone"},{name:"Straccetti ai Funghi Porcini",price:"€13",desc:""},{name:"Straccetti Rucola e Pachino",price:"€12",desc:""},{name:"Straccetti al Radicchio",price:"€12",desc:""},{name:"Saltimbocca alla Romana",price:"€12",desc:""},{name:"Scaloppine al Limone",price:"€12",desc:""},{name:"Scamorza Porcini e Tartufo",price:"€13",desc:""},{name:"Piatto Misto",price:"€20",desc:"Costolette di abbacchio fritte, straccetti al radicchio, saltimbocca, patate arrosto e cicoria"},{name:"Scamorza Miele e Noci",price:"€10",desc:""},{name:"Costatine di Abbacchio Fritto",price:"€20",desc:""}],contorni:[{name:"Insalata Pere e Pecorino",price:"€7",desc:"Con melograno"},{name:"Insalata Champignon",price:"€7",desc:"Con scaglie di parmigiano"},{name:"Radicchio",price:"€7",desc:"Con miele, noci e aceto balsamico"},{name:"Patate Arrosto",price:"€5",desc:""},{name:"Patate Fritte",price:"€5",desc:""},{name:"Insalata Rucola e Pomodorini",price:"€5",desc:""},{name:"Cicoria Ripassata",price:"€5",desc:"Saltata in padella con aglio, olio e peperoncino"}],pizze:[{name:"Margherita",price:"€7",desc:""},{name:"Capricciosa",price:"€10",desc:""},{name:"Boscaiola",price:"€10",desc:"Mozzarella, funghi, salsiccia"},{name:"Ortolana",price:"€10",desc:"Pomodoro, mozzarella, misto di verdure"},{name:"Cicoria e Salsiccia",price:"€10",desc:""},{name:"Parmigiana",price:"€10",desc:"Mozzarella, pomodoro, melanzane, parmigiano"},{name:"4 Formaggi",price:"€10",desc:"Con noci e miele"},{name:"Rughetta, Bresaola e Parmigiano",price:"€12",desc:""},{name:"Provola e Speck",price:"€10",desc:""},{name:"Cacciatora",price:"€12",desc:"Pom, mozz, salamino, funghi porcini"},{name:"Al Cantuccio",price:"€12",desc:"Rughetta, pachino, bufala, tonno"},{name:"Cacio e Pepe",price:"€10",desc:"Mozzarella, pecorino, pepe"},{name:"Carbonara",price:"€10",desc:"Mozzarella, uovo, parmigiano, pepe"},{name:"Amatriciana",price:"€10",desc:"Mozz, pom, pancetta, pecorino"},{name:"Cinghiale",price:"€12",desc:"Pom, mozz, cinghiale, pecorino"},{name:"Norcia",price:"€13",desc:"Mozz, salsiccia, tartufo, funghi porcini"},{name:"Rocca di Papa",price:"€12",desc:"Mozz, pom, funghi misti, ricotta salata"}],calzoni_focacce:[{name:"Calzone Cotto e Zucchine",price:"€10",desc:""},{name:"Calzone Casatiello",price:"€10",desc:"Mozz, melanzane, salame piccante, ricotta, olive"},{name:"Calzone Cotto e Carciofi",price:"€10",desc:""},{name:"Calzone Funghi e Prosciutto",price:"€10",desc:"Crudo o cotto"},{name:"Calzone Patate e Salsiccia",price:"€10",desc:""},{name:"Focaccia Semplice",price:"€3",desc:""},{name:"Focaccia al Crudo",price:"€10",desc:""},{name:"Focaccia Radicchio",price:"€10",desc:"Noci, parmigiano e balsamico"},{name:"Focaccia con Porchetta",price:"€10",desc:"Ripiena"},{name:"Focaccia Cicoria e Salsiccia",price:"€10",desc:"Ripiena"}],dolci:[{name:"Tiramisù Classico",price:"€5",desc:""},{name:"Torta di Mele",price:"€5",desc:"Alla cannella con gelato alla crema"},{name:"Torta Pere e Cioccolato",price:"€5",desc:""},{name:"Zuppa Inglese",price:"€5",desc:""},{name:"Focaccia Mele e Cannella",price:"€16",desc:"Dolce focaccia da condividere"},{name:"Focaccia Pere e Ricotta",price:"€16",desc:"Con cioccolato a scaglie"},{name:"Focaccia Nutella e Cocco",price:"€16",desc:""},{name:"Focaccia della Nonna",price:"€16",desc:"Ripiena con crema e pinoli"}],vini_bianchi:[{name:"Vino della Casa (1 Lt)",price:"€6",desc:"Locale artigianale"},{name:"Vino della Casa (1/2 Lt)",price:"€4",desc:"Locale artigianale"},{name:"Vino della Casa (1/4 Lt)",price:"€3",desc:"Locale artigianale"},{name:"Dino Limiti Sfuso (1 Lt)",price:"€6",desc:""},{name:"Dino Limiti Sfuso (1/2 Lt)",price:"€4",desc:""},{name:"Dino Limiti Sfuso (1/4 Lt)",price:"€3",desc:""},{name:"Romanella Bianca",price:"€12",desc:""},{name:"Ribolla Gialla",price:"€20",desc:"Venezia Giulia"},{name:"Friulano",price:"€15",desc:"Villa Danieli"},{name:"Satrico",price:"€20",desc:"Casale del Giglio"},{name:"Greco di Tufo",price:"€20",desc:"Feudi di San Gregorio"},{name:"Gotto d'oro",price:"€18",desc:"Marino Superiore"},{name:"Pecorino Biologico",price:"€20",desc:"Cantina Tollo"},{name:"Falanghina",price:"€20",desc:"Feudi di San Gregorio"},{name:"Falanghina Beneventano",price:"€18",desc:""},{name:"Moscato Giallo",price:"€20",desc:"Dino Limiti"},{name:"People",price:"€20",desc:"Poggio Le Volpi"}],vini_rossi:[{name:"Vino della Casa (1 Lt)",price:"€6",desc:"Locale artigianale"},{name:"Vino della Casa (1/2 Lt)",price:"€4",desc:"Locale artigianale"},{name:"Vino della Casa (1/4 Lt)",price:"€3",desc:"Locale artigianale"},{name:"Dino Limiti Sfuso (1 Lt)",price:"€10",desc:""},{name:"Dino Limiti Sfuso (1/2 Lt)",price:"€6",desc:""},{name:"Dino Limiti Sfuso (1/4 Lt)",price:"€4",desc:""},{name:"Romanella Rossa",price:"€12",desc:""},{name:"Montefalco Sagrantino",price:"€24",desc:"Vignabaldo Umbra"},{name:"Nero d'Avola",price:"€18",desc:"Fonte Frontini"},{name:"Morellino di Scansano",price:"€20",desc:"La Rasola"},{name:"Colle del Turchetto",price:"€20",desc:"Dino Limiti"},{name:"Barolo",price:"€40",desc:"Antica Cantina di Calosso"},{name:"Shiraz",price:"€20",desc:"Casale del Giglio"},{name:"Chianti",price:"€18",desc:"Torre delle Grazie"},{name:"Vinea Domini",price:"€18",desc:""},{name:"Col di Sasso",price:"€16",desc:"Banfi"},{name:"Brunello di Montalcino",price:"€35",desc:"Predella"},{name:"Rosse Masserie",price:"€18",desc:"Negroamaro Salento"},{name:"Santa Cristina",price:"€18",desc:"Toscana"},{name:"Ninfeo",price:"€12",desc:"Cannonau di Sardegna"},{name:"Amarone della Valpolicella",price:"€28",desc:"Le Colline dei Filari"},{name:"Barbera d'Asti",price:"€18",desc:"Medaina"},{name:"Refosco",price:"€18",desc:"Paron Mario"},{name:"Barbera d'Asti",price:"€12",desc:"Antica Cantina di Calosso"},{name:"Cantalupi",price:"€18",desc:"Tenute Conti Zecca"},{name:"Brunello di Montalcino",price:"€35",desc:"Sensi"},{name:"Montepulciano d'Abruzzo",price:"€18",desc:"Predella"}],bevande:[{name:"Birra Nastro Azzurro 62cl",price:"€6",desc:""},{name:"Birra Nastro Azzurro 33cl",price:"€4",desc:""},{name:"Birra Peroni Gran Riserva Rossa 33cl",price:"€4",desc:""},{name:"Birra Peroni Doppio Malto 33cl",price:"€4",desc:""},{name:"Birra Birba Artigianale 33cl",price:"€6",desc:""},{name:"Coca Cola Grande",price:"€5",desc:""},{name:"Acqua 1 Lt",price:"€2",desc:""},{name:"Bibite in lattina",price:"€2",desc:""}]};
+        
+        function renderMenu(e){const n=document.getElementById("menu-container"),a=menuData[e];a&&(n.innerHTML=a.map(e=>`\n                <div class="flex justify-between items-start border-b border-gray-300 pb-4 hover:bg-white p-4 rounded transition-all shadow-sm hover:shadow-md group">\n                    <div class="flex-1 pr-4">\n                        <h4 class="text-xl font-geo font-bold text-brand-green mb-1 group-hover:text-brand-red transition-colors">${e.name}</h4>\n                        ${e.desc?`<p class="text-gray-500 text-sm font-light italic">${e.desc}</p>`:""}\n                    </div>\n                    <span class="text-brand-dark font-bold text-xl whitespace-nowrap">${e.price}</span>\n                </div>\n            `).join(""),document.querySelectorAll(".menu-tab").forEach(n=>{n.classList.remove("bg-brand-green","text-white","shadow-lg","transform","scale-105"),n.classList.add("text-gray-500","bg-white","border","border-gray-200"),n.dataset.category===e&&(n.classList.remove("text-gray-500","bg-white","border","border-gray-200"),n.classList.add("bg-brand-green","text-white","shadow-lg","transform","scale-105"))}))}
+        function handleReservation(e){e.preventDefault();const n=e.target,a=n.querySelector("button"),t=a.innerHTML,r=n.querySelector('[name="name"]').value,o=n.querySelector('[name="phone"]').value,i=n.querySelector('[name="date"]').value,s=n.querySelector('[name="time"]').value,c=n.querySelector('[name="guests"]').value,l=n.querySelector('[name="notes"]').value,d=new Date(i).toLocaleDateString("it-IT",{weekday:"long",year:"numeric",month:"long",day:"numeric"}),m=`Ciao! Vorrei prenotare un tavolo per ${c} persone a nome ${r} per ${d} alle ore ${s}. Il mio numero è ${o}.${l?" Note aggiuntive: "+l:""}`,u=encodeURIComponent(m);a.innerHTML='<i class="fas fa-check"></i> Apro WhatsApp...',a.classList.remove("bg-brand-green"),a.classList.add("bg-gray-800"),window.open(`https://wa.me/393921384418?text=${u}`,"_blank"),setTimeout(()=>{a.innerHTML=t,a.classList.add("bg-brand-green"),a.classList.remove("bg-gray-800"),n.reset()},3e3)}
+        function initMenu(){const e=document.getElementById("menu-tabs");e.innerHTML=[{id:"antipasti",label:"Antipasti"},{id:"primi",label:"Primi"},{id:"secondi",label:"Secondi"},{id:"contorni",label:"Contorni"},{id:"pizze",label:"Pizze"},{id:"calzoni_focacce",label:"Calzoni"},{id:"vini_bianchi",label:"Vini Bianchi"},{id:"vini_rossi",label:"Vini Rossi"},{id:"bevande",label:"Bevande"},{id:"dolci",label:"Dolci"}].map(e=>`\n                <button \n                    class="menu-tab px-6 py-2 rounded-full font-bold uppercase text-sm transition-all duration-300 focus:outline-none m-1" \n                    onclick="renderMenu('${e.id}')"\n                    data-category="${e.id}">\n                    ${e.label}\n                </button>\n            `).join(""),renderMenu("antipasti")}
+        
+        document.getElementById("mobile-menu-btn").addEventListener("click",()=>{document.getElementById("mobile-menu").classList.toggle("hidden")});
+        window.addEventListener("scroll",()=>{const e=document.getElementById("navbar");window.scrollY>50?e.classList.add("shadow-md"):e.classList.remove("shadow-md")});
+        document.addEventListener("DOMContentLoaded",initMenu);
     </script>
 </body>
 </html>
