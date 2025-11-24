@@ -12,27 +12,30 @@
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport ottimizzato per evitare zoom indesiderati -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
+    <!-- Colore barra browser (Beige invece di nero/rosso) -->
+    <meta name="theme-color" content="#F9F7F0">
+
     <!-- --- SEO & META TAGS --- -->
     <title>Al Cantuccio | Ristorante Pizzeria a Marino</title>
     <meta name="description" content="Dal 1990 Al Cantuccio offre cucina tradizionale romana, pizza e vini dei Castelli nel cuore di Marino. Prenota il tuo tavolo!">
     <meta name="keywords" content="Ristorante Marino, Pizzeria Marino, Cucina Romana, Castelli Romani, Pasta fatta a mano, Al Cantuccio">
     <meta name="author" content="Al Cantuccio">
 
-    <!-- Social Sharing (Open Graph) -->
+    <!-- Social Sharing -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.alcantucciomarino.it/">
     <meta property="og:title" content="Al Cantuccio | Ristorante Pizzeria a Marino">
     <meta property="og:description" content="Cucina romana, atmosfera accogliente e tradizione dal 1990.">
     <meta property="og:image" content="IMG_3609.jpeg">
 
-    <!-- --- ICONA DEL SITO (FAVICON) --- -->
-    <!-- Punta al file logo.svg che trovi qui sotto -->
+    <!-- Icona -->
     <link rel="icon" type="image/svg+xml" href="logo.svg">
     <link rel="apple-touch-icon" href="logo.svg">
 
-    <!-- Librerie Esterne -->
+    <!-- Librerie -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
@@ -95,11 +98,23 @@
         .font-script { font-family: 'Motterdam', cursive; }
         .font-geo { font-family: 'CaviarDreams', sans-serif; }
 
+        /* --- FIX SFONDO HERO --- */
         .hero-bg {
+            /* Impostazioni base */
             background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('IMG_3609.jpeg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            background-repeat: no-repeat;
+            
+            /* SU MOBILE: Scroll normale (risolve il problema dello zoom/sgranato) */
+            background-attachment: scroll; 
+        }
+
+        /* SU DESKTOP (schermi grandi): Rimettiamo l'effetto fisso/parallax */
+        @media (min-width: 1024px) {
+            .hero-bg {
+                background-attachment: fixed;
+            }
         }
         
         .gallery-img { transition: transform 0.5s ease; }
@@ -125,12 +140,12 @@
             <div class="flex justify-between items-center h-20">
                 
                 <!-- Logo Nav -->
-                <div class="flex-shrink-0 flex items-center gap-12 z-20">
+                <div class="flex-shrink-0 flex items-center gap-4 md:gap-12 z-20">
                     <a href="#" class="flex flex-col items-center leading-none group">
-                        <span class="font-script text-4xl text-black tracking-wide group-hover:text-brand-red transition-colors">al Cantuccio</span>
-                        <span class="font-geo text-[10px] text-black font-bold tracking-[0.2em] mt-1 uppercase">RISTORANTE PIZZERIA</span>
+                        <span class="font-script text-3xl md:text-4xl text-black tracking-wide group-hover:text-brand-red transition-colors">al Cantuccio</span>
+                        <span class="font-geo text-[8px] md:text-[10px] text-black font-bold tracking-[0.2em] mt-1 uppercase">RISTORANTE PIZZERIA</span>
                     </a>
-                    <span class="font-geo font-bold text-brand-green uppercase text-sm tracking-widest">MARINO</span>
+                    <span class="font-geo font-bold text-brand-green uppercase text-xs md:text-sm tracking-widest hidden xs:block">MARINO</span>
                 </div>
                 
                 <!-- Menu -->
@@ -143,7 +158,7 @@
                         <a href="#reservation" class="px-5 py-2 bg-brand-red text-brand-beige hover:bg-brand-green transition-all duration-300 text-sm uppercase tracking-widest font-bold rounded-full">Prenota</a>
                     </div>
                     <div class="md:hidden flex items-center ml-4">
-                        <button id="mobile-menu-btn" class="text-gray-800 hover:text-brand-green focus:outline-none">
+                        <button id="mobile-menu-btn" class="text-gray-800 hover:text-brand-green focus:outline-none p-2">
                             <i class="fas fa-bars text-2xl"></i>
                         </button>
                     </div>
@@ -153,25 +168,25 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-beige border-t border-gray-200">
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-beige border-t border-gray-200 absolute w-full left-0 top-20 shadow-xl">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
-                <a href="#home" class="block px-3 py-2 text-base font-bold text-gray-700 hover:text-brand-green">Home</a>
-                <a href="#about" class="block px-3 py-2 text-base font-bold text-gray-700 hover:text-brand-green">Chi Siamo</a>
-                <a href="#menu" class="block px-3 py-2 text-base font-bold text-gray-700 hover:text-brand-green">Menu</a>
-                <a href="#gallery" class="block px-3 py-2 text-base font-bold text-gray-700 hover:text-brand-green">Galleria</a>
-                <a href="#reservation" class="block px-3 py-2 text-base font-bold text-brand-red">Prenota</a>
+                <a href="#home" class="block px-3 py-3 text-lg font-bold text-gray-700 hover:text-brand-green border-b border-gray-100" onclick="closeMenu()">Home</a>
+                <a href="#about" class="block px-3 py-3 text-lg font-bold text-gray-700 hover:text-brand-green border-b border-gray-100" onclick="closeMenu()">Chi Siamo</a>
+                <a href="#menu" class="block px-3 py-3 text-lg font-bold text-gray-700 hover:text-brand-green border-b border-gray-100" onclick="closeMenu()">Menu</a>
+                <a href="#gallery" class="block px-3 py-3 text-lg font-bold text-gray-700 hover:text-brand-green border-b border-gray-100" onclick="closeMenu()">Galleria</a>
+                <a href="#reservation" class="block px-3 py-3 text-lg font-bold text-brand-red" onclick="closeMenu()">Prenota</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section id="home" class="hero-bg h-screen flex items-center justify-center text-center px-4">
-        <div class="max-w-4xl mx-auto pt-16 fade-in">
-            <h1 class="font-script text-8xl md:text-9xl text-white mb-0 leading-tight drop-shadow-lg" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">al Cantuccio</h1>
-            <p class="font-geo text-2xl md:text-3xl text-white mb-8 font-bold tracking-[0.2em] drop-shadow-md uppercase mt-2">Ristorante Pizzeria</p>
-            <div class="flex flex-col sm:flex-row gap-6 justify-center mt-8">
-                <a href="#menu" class="px-10 py-4 bg-brand-green text-white font-bold uppercase tracking-widest hover:bg-white hover:text-brand-green transition-colors duration-300 shadow-lg rounded-sm font-geo">Scopri il Menu</a>
-                <a href="#reservation" class="px-10 py-4 bg-brand-red text-white font-bold uppercase tracking-widest hover:bg-white hover:text-brand-red transition-colors duration-300 shadow-lg rounded-sm font-geo">Prenota Tavolo</a>
+    <section id="home" class="hero-bg h-screen flex items-center justify-center text-center px-4 relative">
+        <div class="max-w-4xl mx-auto pt-16 fade-in w-full">
+            <h1 class="font-script text-6xl sm:text-7xl md:text-9xl text-white mb-2 leading-tight drop-shadow-lg" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">al Cantuccio</h1>
+            <p class="font-geo text-lg sm:text-2xl md:text-3xl text-white mb-8 font-bold tracking-[0.2em] drop-shadow-md uppercase mt-2">Ristorante Pizzeria</p>
+            <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mt-8 px-4">
+                <a href="#menu" class="px-8 py-3 sm:px-10 sm:py-4 bg-brand-green text-white font-bold uppercase tracking-widest hover:bg-white hover:text-brand-green transition-colors duration-300 shadow-lg rounded-sm font-geo text-sm sm:text-base w-full sm:w-auto block">Scopri il Menu</a>
+                <a href="#reservation" class="px-8 py-3 sm:px-10 sm:py-4 bg-brand-red text-white font-bold uppercase tracking-widest hover:bg-white hover:text-brand-red transition-colors duration-300 shadow-lg rounded-sm font-geo text-sm sm:text-base w-full sm:w-auto block">Prenota Tavolo</a>
             </div>
         </div>
     </section>
@@ -320,6 +335,7 @@
         function renderMenu(e){const n=document.getElementById("menu-container"),a=menuData[e];a&&(n.innerHTML=a.map(e=>`\n                <div class="flex justify-between items-start border-b border-gray-300 pb-4 hover:bg-white p-4 rounded transition-all shadow-sm hover:shadow-md group">\n                    <div class="flex-1 pr-4">\n                        <h4 class="text-xl font-geo font-bold text-brand-green mb-1 group-hover:text-brand-red transition-colors">${e.name}</h4>\n                        ${e.desc?`<p class="text-gray-500 text-sm font-light italic">${e.desc}</p>`:""}\n                    </div>\n                    <span class="text-brand-dark font-bold text-xl whitespace-nowrap">${e.price}</span>\n                </div>\n            `).join(""),document.querySelectorAll(".menu-tab").forEach(n=>{n.classList.remove("bg-brand-green","text-white","shadow-lg","transform","scale-105"),n.classList.add("text-gray-500","bg-white","border","border-gray-200"),n.dataset.category===e&&(n.classList.remove("text-gray-500","bg-white","border","border-gray-200"),n.classList.add("bg-brand-green","text-white","shadow-lg","transform","scale-105"))}))}
         function handleReservation(e){e.preventDefault();const n=e.target,a=n.querySelector("button"),t=a.innerHTML,r=n.querySelector('[name="name"]').value,o=n.querySelector('[name="phone"]').value,i=n.querySelector('[name="date"]').value,s=n.querySelector('[name="time"]').value,c=n.querySelector('[name="guests"]').value,l=n.querySelector('[name="notes"]').value,d=new Date(i).toLocaleDateString("it-IT",{weekday:"long",year:"numeric",month:"long",day:"numeric"}),m=`Ciao! Vorrei prenotare un tavolo per ${c} persone a nome ${r} per ${d} alle ore ${s}. Il mio numero è ${o}.${l?" Note aggiuntive: "+l:""}`,u=encodeURIComponent(m);a.innerHTML='<i class="fas fa-check"></i> Apro WhatsApp...',a.classList.remove("bg-brand-green"),a.classList.add("bg-gray-800"),window.open(`https://wa.me/393921384418?text=${u}`,"_blank"),setTimeout(()=>{a.innerHTML=t,a.classList.add("bg-brand-green"),a.classList.remove("bg-gray-800"),n.reset()},3e3)}
         function initMenu(){const e=document.getElementById("menu-tabs");e.innerHTML=[{id:"antipasti",label:"Antipasti"},{id:"primi",label:"Primi"},{id:"secondi",label:"Secondi"},{id:"contorni",label:"Contorni"},{id:"pizze",label:"Pizze"},{id:"calzoni_focacce",label:"Calzoni"},{id:"vini_bianchi",label:"Vini Bianchi"},{id:"vini_rossi",label:"Vini Rossi"},{id:"bevande",label:"Bevande"},{id:"dolci",label:"Dolci"}].map(e=>`\n                <button \n                    class="menu-tab px-6 py-2 rounded-full font-bold uppercase text-sm transition-all duration-300 focus:outline-none m-1" \n                    onclick="renderMenu('${e.id}')"\n                    data-category="${e.id}">\n                    ${e.label}\n                </button>\n            `).join(""),renderMenu("antipasti")}
+        function closeMenu(){document.getElementById("mobile-menu").classList.add("hidden")}
         
         document.getElementById("mobile-menu-btn").addEventListener("click",()=>{document.getElementById("mobile-menu").classList.toggle("hidden")});
         window.addEventListener("scroll",()=>{const e=document.getElementById("navbar");window.scrollY>50?e.classList.add("shadow-md"):e.classList.remove("shadow-md")});
