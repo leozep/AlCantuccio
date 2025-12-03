@@ -15,7 +15,7 @@
     <!-- Viewport ottimizzato per evitare zoom indesiderati -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- Colore barra browser (Beige invece di nero/rosso) -->
+    <!-- Colore barra browser -->
     <meta name="theme-color" content="#F9F7F0">
 
     <!-- --- SEO & META TAGS --- -->
@@ -139,11 +139,11 @@
         <div class="w-full px-4 sm:px-6 lg:px-8 relative">
             <div class="flex justify-between items-center h-20">
                 
-                <!-- Logo Nav -->
+                <!-- Logo Nav (MODIFICATO: Usa il logo nero) -->
                 <div class="flex-shrink-0 flex items-center gap-4 md:gap-12 z-20">
                     <a href="#" class="flex flex-col items-center leading-none group">
-                        <span class="font-script text-3xl md:text-4xl text-black tracking-wide group-hover:text-brand-red transition-colors">al Cantuccio</span>
-                        <span class="font-geo text-[8px] md:text-[10px] text-black font-bold tracking-[0.2em] mt-1 uppercase">RISTORANTE PIZZERIA</span>
+                        <!-- Qui usiamo il logo scuro (black) perché lo sfondo è beige -->
+                        <img src="logo-black.png" alt="Al Cantuccio Logo" class="h-16 w-auto object-contain">
                     </a>
                     <span class="font-geo font-bold text-brand-green uppercase text-xs md:text-sm tracking-widest hidden xs:block">MARINO</span>
                 </div>
@@ -179,11 +179,12 @@
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero (MODIFICATO: Usa il logo bianco) -->
     <section id="home" class="hero-bg h-screen flex items-center justify-center text-center px-4 relative">
         <div class="max-w-4xl mx-auto pt-16 fade-in w-full">
-            <h1 class="font-script text-6xl sm:text-7xl md:text-9xl text-white mb-2 leading-tight drop-shadow-lg" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">al Cantuccio</h1>
-            <p class="font-geo text-lg sm:text-2xl md:text-3xl text-white mb-8 font-bold tracking-[0.2em] drop-shadow-md uppercase mt-2">Ristorante Pizzeria</p>
+            <!-- Qui usiamo il logo chiaro (white) perché lo sfondo è scuro -->
+            <img src="logo-white.png" alt="Al Cantuccio" class="mx-auto h-40 sm:h-56 md:h-72 w-auto object-contain mb-6 drop-shadow-lg">
+            
             <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mt-8 px-4">
                 <a href="#menu" class="px-8 py-3 sm:px-10 sm:py-4 bg-brand-green text-white font-bold uppercase tracking-widest hover:bg-white hover:text-brand-green transition-colors duration-300 shadow-lg rounded-sm font-geo text-sm sm:text-base w-full sm:w-auto block">Scopri il Menu</a>
                 <a href="#reservation" class="px-8 py-3 sm:px-10 sm:py-4 bg-brand-red text-white font-bold uppercase tracking-widest hover:bg-white hover:text-brand-red transition-colors duration-300 shadow-lg rounded-sm font-geo text-sm sm:text-base w-full sm:w-auto block">Prenota Tavolo</a>
@@ -315,10 +316,12 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer (MODIFICATO: Usa il logo bianco) -->
     <footer class="bg-brand-red py-12 border-t-4 border-brand-green text-brand-beige">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="font-script text-6xl mb-6">al Cantuccio</p>
+            <!-- Qui usiamo il logo chiaro (white) perché lo sfondo è rosso -->
+            <img src="logo-white.png" alt="Al Cantuccio" class="mx-auto h-24 w-auto object-contain mb-6 opacity-90">
+            
             <div class="flex justify-center space-x-8 mb-8">
                 <a href="https://www.facebook.com/alcantuccio.marino/?locale=it_IT" target="_blank" class="text-brand-beige hover:text-brand-green transition-colors transform hover:scale-110"><i class="fab fa-facebook-f text-2xl"></i></a>
                 <a href="https://www.instagram.com/al_cantucciomarino/" target="_blank" class="text-brand-beige hover:text-brand-green transition-colors transform hover:scale-110"><i class="fab fa-instagram text-2xl"></i></a>
