@@ -241,14 +241,14 @@
                     <div class="w-32 h-1 bg-white/30 mx-auto rounded-full mt-2"></div>
                 </div>
 
-                <!-- Layout modificato: rimosso grid, ora è un flex centrato per un singolo elemento -->
-                <div class="flex justify-center">
+                <!-- Ripristinato il layout a griglia a due colonne -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
                     
-                    <!-- Piatti del Giorno (Centrato e prezzo aggiornato) -->
-                    <div class="text-center font-geo text-white/90 w-full max-w-lg">
+                    <!-- Left Side: Piatti del Giorno -->
+                    <div class="text-center font-geo text-white/90">
                         <h4 class="font-script text-4xl text-brand-green mb-6 transform -rotate-2 inline-block border-b-2 border-white/20 pb-1">I Piatti del Giorno</h4>
                         
-                        <div class="w-full space-y-4">
+                        <div class="w-full max-w-md mx-auto space-y-4">
                             <!-- Item 1 -->
                             <div class="flex justify-between items-center border-b border-white/20 pb-3 hover:bg-white/10 p-3 rounded transition-all shadow-sm hover:shadow-md group text-left">
                                 <div class="flex-1 pr-4">
@@ -267,6 +267,40 @@
                             </div>
                         </div>
 
+                    </div>
+
+                    <!-- Right Side: Menu Speciale 5 e 6 Aprile -->
+                    <div class="text-center font-geo text-white/90 relative">
+                        <!-- Vertical Divider for Desktop -->
+                        <div class="hidden md:block absolute -left-8 top-0 bottom-0 w-[1px] bg-white/10"></div>
+                        
+                        <h4 class="font-script text-4xl text-brand-red mb-2 transform rotate-1 inline-block border-b-2 border-white/20 pb-1">Menu Speciale</h4>
+                        <p class="font-sans text-sm text-white/70 mb-6 uppercase tracking-widest font-bold">5 e 6 Aprile</p>
+
+                        <div class="space-y-6 text-base sm:text-lg leading-snug">
+                            <div>
+                                <p class="text-brand-green font-bold mb-1 uppercase tracking-wider text-sm">Antipasto Pasqualino</p>
+                                <p class="text-white/90 text-sm sm:text-base">Pizza pasquale al formaggio, corallina, frittatina con tartufo, assaggini di Trippata, frittata marinese di patate</p>
+                            </div>
+
+                            <div>
+                                <p class="text-brand-green font-bold mb-1 uppercase tracking-wider text-sm">Misto di Primi</p>
+                                <p class="text-white/90 text-sm sm:text-base">Pappardelle al cinghiale &amp; Lasagne ai funghi porcini e tartufo</p>
+                            </div>
+
+                            <div>
+                                <p class="text-brand-green font-bold mb-1 uppercase tracking-wider text-sm">Secondo a Scelta</p>
+                                <p class="text-white/90 text-sm sm:text-base">Capretto al forno con patate <br><span class="italic text-gray-400 text-xs">oppure</span><br>Misto: costolette d'abbacchio fritte dorate, straccetti al radicchio, saltimbocca alla romana, cicoria ripassata e patate arrosto</p>
+                            </div>
+
+                            <div>
+                                <p class="text-white/90 text-sm">Dolce a scelta, Acqua, &frac14; vino artigianale, caffè</p>
+                            </div>
+
+                            <div class="mt-4 transform rotate-2">
+                                <span class="border-2 border-brand-red rounded-full px-4 py-2 text-2xl text-brand-red font-bold">€ 45</span>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
