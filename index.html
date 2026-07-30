@@ -246,23 +246,7 @@
                             <!-- Item 1 -->
                             <div class="flex justify-between items-center border-b border-white/20 pb-3 hover:bg-white/10 p-3 rounded transition-all shadow-sm hover:shadow-md group text-left">
                                 <div class="flex-1 pr-4">
-                                    <h4 class="text-xl font-geo font-bold text-white mb-1">Carciofi fritti</h4>
-                                </div>
-                                <span class="text-white font-bold text-xl whitespace-nowrap">€8</span>
-                            </div>
-
-                            <!-- Item 2 -->
-                            <div class="flex justify-between items-center border-b border-white/20 pb-3 hover:bg-white/10 p-3 rounded transition-all shadow-sm hover:shadow-md group text-left">
-                                <div class="flex-1 pr-4">
-                                    <h4 class="text-xl font-geo font-bold text-white mb-1">Torta ai frutti di bosco</h4>
-                                </div>
-                                <span class="text-white font-bold text-xl whitespace-nowrap">€5</span>
-                            </div>
-
-                            <!-- Item 3 -->
-                            <div class="flex justify-between items-center border-b border-white/20 pb-3 hover:bg-white/10 p-3 rounded transition-all shadow-sm hover:shadow-md group text-left">
-                                <div class="flex-1 pr-4">
-                                    <h4 class="text-xl font-geo font-bold text-white mb-1">Torta Paola</h4>
+                                    <h4 class="text-xl font-geo font-bold text-white mb-1">Gelato con le more</h4>
                                 </div>
                                 <span class="text-white font-bold text-xl whitespace-nowrap">€5</span>
                             </div>
@@ -301,7 +285,7 @@
                     <img src="unnamed.webp" alt="Pasta Romana" class="gallery-img w-full h-full object-cover">
                 </div>
                 <div class="overflow-hidden h-64 relative group border-2 border-brand-beige shadow-lg">
-                    <img src="paola.jpeg" alt="Carne" class="gallery-img w-full h-full object-cover">
+                    <img src="2020-11-05 (1).webp" alt="Carne" class="gallery-img w-full h-full object-cover">
                 </div>
                 <div class="overflow-hidden h-64 relative group border-2 border-brand-beige shadow-lg">
                     <img src="unnamed (1).webp" alt="Vino e Brocca" class="gallery-img w-full h-full object-cover">
@@ -393,169 +377,82 @@
     <script>
         const menuData={
             antipasti: [
-                {name: "Montanaro", price: "€16", desc: "Misto di salumi, ricotta, mozzarella"},
-                {name: "Tagliere Contadino", price: "€16", desc: "Porchetta, verdure grigliate, salamino, ricotta, frittatine, mozzarella"},
-                {name: "Tagliere Ortolano", price: "€13", desc: "Verdure grigliate, ricotta, frittatine, mozzarella"},
-                {name: "Bruschette Miste", price: "€6", desc: "Pomodoro, porcini, crudo, patè di olive"},
-                {name: "Supplì", price: "€2", desc: "Classico romano"},
-                {name: "Fiori di Zucca", price: "€2", desc: "Pastellati e fritti"},
-                {name: "Filetti di Baccalà", price: "€4", desc: "Pastellati e fritti"},
-                {name: "Olive Ascolane (5)", price: "€3", desc: ""},
-                {name: "Crocchette di Patate (5)", price: "€3", desc: ""},
-                {name: "Misto di Fritti", price: "€8", desc: "1 fiore di zucca, 1 supplì, 2 olive ascolane, 2 crocchette, verdure pastellate"}
+                {name: "Tagliere Contadino", price: "€16", desc: "Porchetta, verdure, assaggini"},
+                {name: "Tagliere Montanaro", price: "€16", desc: "Salumi misti"},
+                {name: "Tagliere Ortolano", price: "€13", desc: "Verdure, fagioli, frittatine, parmigiana"},
+                {name: "Misto di Fritti", price: "€8", desc: "1 supplì, 1 fiore di zucca, 2 olive, 2 crocchette, verdure pastellate"},
+                {name: "Bruschette Miste", price: "€6", desc: "Pomodorini, prosciutto, funghi porcini, patè di olive"},
+                {name: "Olive Ascolane (porzione)", price: "€3", desc: ""},
+                {name: "Crocchette di patate (porzione)", price: "€3", desc: ""},
+                {name: "Supplì", price: "€2", desc: ""},
+                {name: "Fiori di zucca", price: "€2", desc: ""}
             ],
             primi: [
-                {name: "Strozzapreti", price: "€12", desc: "Con zucchine, pomodorini e provola affumicata"},
-                {name: "Gnocchetti alla Sorrentina", price: "€12", desc: "Gnocchetti di patate con pomodoro e mozzarella"},
-                {name: "Rigatoni all'Amatriciana", price: "€12", desc: "Guanciale, pomodoro, pecorino"},
-                {name: "Rigatoni alla Pajata", price: "€12", desc: "Tradizione Romana"},
-                {name: "Tonnarelli Cacio e Pepe", price: "€12", desc: "Pecorino Romano e pepe nero"},
-                {name: "Pasta Brucio", price: "€12", desc: "Paccheri con verdure croccanti, pinoli, mela e peperoncino"},
-                {name: "Fettuccine ai Porcini", price: "€16", desc: "Fatte a mano"},
-                {name: "Pappardelle al Cinghiale", price: "€16", desc: "Fatte a mano"},
-                {name: "Cannelloni Tradizionali", price: "€14", desc: "Con ripieno di carne"},
-                {name: "Tonnarelli ai Carciofi", price: "€14", desc: ""}
+                {name: "Tonnarelli allo Scoglio", price: "€18", desc: ""},
+                {name: "Pappardelle al cinghiale", price: "€16", desc: "Fatte a mano"},
+                {name: "Fettuccine ai Funghi Porcini", price: "€16", desc: "Fatte a mano"},
+                {name: "Gnocchetti Vongole e Funghi Porcini", price: "€16", desc: ""},
+                {name: "Riso alla Crema di Scampi", price: "€16", desc: ""},
+                {name: "Paccheri con crema di zucca", price: "€14", desc: "Con pancetta croccante"},
+                {name: "Strozzapreti", price: "€12", desc: "Con pomodorini, provola, e zucchine"}
             ],
             secondi: [
-                {name: "Filetto di Scottona", price: "€20", desc: ""},
-                {name: "Filetto di Scottona ai Porcini", price: "€28", desc: ""},
-                {name: "Tagliata di Scottona", price: "€18", desc: "Scegli tra: Rosmarino, Aceto Balsamico, o Lardo di Colonnata"},
-                {name: "Tagliata ai Funghi Porcini", price: "€20", desc: "Tagliata di Scottona"},
-                {name: "Tagliata di Pollo", price: "€10", desc: "Con miele e limone"},
-                {name: "Straccetti ai Funghi Porcini", price: "€13", desc: ""},
-                {name: "Straccetti Rucola e Pachino", price: "€12", desc: ""},
-                {name: "Straccetti al Radicchio", price: "€12", desc: ""},
-                {name: "Saltimbocca alla Romana", price: "€12", desc: ""},
-                {name: "Scaloppine al Limone", price: "€12", desc: ""},
-                {name: "Scamorza Porcini e Tartufo", price: "€13", desc: ""},
-                {name: "Piatto Misto", price: "€20", desc: "Costolette di abbacchio fritte, straccetti al radicchio, saltimbocca, patate arrosto e cicoria"},
-                {name: "Scamorza Miele e Noci", price: "€10", desc: ""},
-                {name: "Costatine di Abbacchio Fritto", price: "€20", desc: ""}
+                {name: "Filetto di Scottona alla brace", price: "€26", desc: "Con cappello di Funghi Porcini"},
+                {name: "Piatto Misto", price: "€20", desc: "Saltimbocca, straccetti rucola/pomodorini, costatina fritta, cicoria, patate"},
+                {name: "Costatine di Abbacchio fritte dorate", price: "€20", desc: ""},
+                {name: "Tagliata di Scottona ai Funghi Porcini", price: "€20", desc: ""},
+                {name: "Frittura di Calamari e Gamberi", price: "€20", desc: ""},
+                {name: "Tagliata di Scottona al rosmarino", price: "€18", desc: ""},
+                {name: "Straccetti ai Funghi porcini", price: "€13", desc: ""},
+                {name: "Scamorza con Funghi Porcini e Tartufo", price: "€13", desc: ""}
             ],
             contorni: [
-                {name: "Insalata Pere e Pecorino", price: "€7", desc: "Con melograno"},
-                {name: "Insalata Champignon", price: "€7", desc: "Con scaglie di parmigiano"},
-                {name: "Radicchio", price: "€7", desc: "Con miele, noci e aceto balsamico"},
-                {name: "Patate Arrosto", price: "€5", desc: ""},
-                {name: "Patate Fritte", price: "€5", desc: ""},
-                {name: "Insalata Rucola e Pomodorini", price: "€5", desc: ""},
-                {name: "Cicoria Ripassata", price: "€5", desc: "Saltata in padella con aglio, olio e peperoncino"}
+                {name: "Radicchio", price: "€7", desc: "Con aceto balsamico, noci, parmigiano e miele"},
+                {name: "Insalata di pere", price: "€7", desc: "Con melograno e pecorino"},
+                {name: "Patate arrosto", price: "€5", desc: ""},
+                {name: "Insalata mista", price: "€5", desc: ""},
+                {name: "Cicoria ripassata", price: "€5", desc: ""}
             ],
             pizze: [
-                {name: "Margherita", price: "€7", desc: ""},
+                {name: "Norcia", price: "€13", desc: "Mozz, salsiccia, tartufo, funghi porcini"},
+                {name: "Rocca di Papa", price: "€12", desc: "Mozz, funghi misti, ricotta salata"},
+                {name: "Cinghiale", price: "€12", desc: ""},
+                {name: "Cacciatora", price: "€12", desc: "Pom, mozz, salamino, funghi porcini, rosm"},
                 {name: "Capricciosa", price: "€10", desc: ""},
-                {name: "Boscaiola", price: "€10", desc: "Mozzarella, funghi, salsiccia"},
-                {name: "Ortolana", price: "€10", desc: "Pomodoro, mozzarella, misto di verdure"},
-                {name: "Cicoria e salsiccia", price: "€10", desc: ""},
-                {name: "Parmigiana", price: "€10", desc: "Mozzarella, pomodoro, melanzane, parmigiano"},
-                {name: "4 formaggi", price: "€10", desc: "Con noci e miele"},
-                {name: "Rughetta, bresaola e parmigiano", price: "€12", desc: ""},
-                {name: "Provola e speck", price: "€10", desc: ""},
-                {name: "Cacciatora", price: "€12", desc: "Pomodoro, mozzarella, salamino, funghi porcini"},
-                {name: "Al Cantuccio", price: "€12", desc: "Rughetta, pachino, bufala, tonno"},
-                {name: "Cacio e pepe", price: "€10", desc: "Mozzarella, pecorino, pepe"},
-                {name: "Carbonara", price: "€10", desc: "Mozzarella, uovo, parmigiano, pepe"},
-                {name: "Amatriciana", price: "€10", desc: "Mozzarella, pomodoro, pancetta, pecorino"},
-                {name: "Cinghiale", price: "€12", desc: "Pomodoro, mozzarella, cinghiale, pecorino"},
+                {name: "Boscaiola", price: "€10", desc: ""},
+                {name: "Ortolano", price: "€10", desc: ""},
+                {name: "Cicoria e Salsiccia", price: "€10", desc: ""},
+                {name: "4 formaggi con miele e noci", price: "€10", desc: ""},
+                {name: "Roma (Cacio e pepe)", price: "€10", desc: ""},
+                {name: "Roma (Amatriciana)", price: "€10", desc: ""},
+                {name: "Roma (Carbonara)", price: "€10", desc: ""},
+                {name: "Modena", price: "€10", desc: "Pom, mozz, crudo, parmigiano, balsamico"},
+                {name: "Avezzano", price: "€10", desc: "Mozz, patate, guanciale"},
+                {name: "Treviso", price: "€10", desc: "Mozz, radicchio, gorgonzola"},
+                {name: "Trento", price: "€10", desc: "Mozz, cipolla, salamino, rosmarino"},
+                {name: "Frosinone", price: "€10", desc: "Mozz, ricotta, pomodorini, pecorino, pepe"},
+                {name: "Reggio Calabria", price: "€10", desc: ""},
+                {name: "Parmigiana", price: "€10", desc: "Pom, mozz, melanzane, parmigiano"},
+                {name: "Cantuccio", price: "€10", desc: "Mozz, pachino, rughetta, tonno, bufala"},
                 {name: "Napoli", price: "€8", desc: ""},
-                {name: "Treviso", price: "€10", desc: "Mozzarella, radicchio, gorgonzola"},
-                {name: "Modena", price: "€10", desc: "Pomodoro, mozzarella, crudo, parmigiano, aceto balsamico"},
-                {name: "Avezzano", price: "€10", desc: "Patate, pancetta, mozzarella"},
-                {name: "Trento", price: "€10", desc: "Mozzarella, cipolla, salamino, speck, rosmarino"},
-                {name: "Frosinone", price: "€10", desc: "Mozzarella, ricotta, pachino, Pecorino, pepe"},
-                {name: "Reggio Calabria", price: "€10", desc: "Pomodorini secchi, nduja, mozzarella"},
-                {name: "Tropea", price: "€10", desc: "Mozzarella, cipolle, aceto balsamico, miele"},
-                {name: "Messina", price: "€10", desc: "Pomodoro, mozzarella, alici, capperi, pangrattato"},
-                {name: "Genova", price: "€10", desc: "Mozzarella, pesto alla genovese"},
-                {name: "Norcia", price: "€13", desc: "Mozzarella, salsiccia, tartufo, funghi porcini"},
-                {name: "Bologna", price: "€12", desc: "Mozzarella, mortadella, squacquerone"},
-                {name: "Rocca di Papa", price: "€12", desc: "Mozzarella, pomodoro, funghi misti, ricotta salata"}
-            ],
-            calzoni_focacce: [
-                {name: "Calzone Cotto e Zucchine", price: "€10", desc: ""},
-                {name: "Calzone Casatiello", price: "€10", desc: "Mozz, melanzane, salame piccante, ricotta, olive"},
-                {name: "Calzone Cotto e Carciofi", price: "€10", desc: ""},
-                {name: "Calzone Funghi e Prosciutto", price: "€10", desc: "Crudo o cotto"},
-                {name: "Calzone Patate e Salsiccia", price: "€10", desc: ""},
-                {name: "Focaccia Semplice", price: "€3", desc: ""},
-                {name: "Focaccia al Crudo", price: "€10", desc: ""},
-                {name: "Focaccia Radicchio", price: "€10", desc: "Noci, parmigiano e balsamico"},
-                {name: "Focaccia con Porchetta", price: "€10", desc: "Ripiena"},
-                {name: "Focaccia Cicoria e Salsiccia", price: "€10", desc: "Ripiena"}
+                {name: "Margherita", price: "€7", desc: ""}
             ],
             dolci: [
-                {name: "Tiramisù Classico", price: "€5", desc: ""},
-                {name: "Torta di Mele", price: "€5", desc: "Alla cannella con gelato alla crema"},
-                {name: "Torta Pere e Cioccolato", price: "€5", desc: ""},
-                {name: "Zuppa Inglese", price: "€5", desc: ""},
-                {name: "Focaccia Mele e Cannella", price: "€16", desc: "Dolce focaccia da condividere"},
-                {name: "Focaccia Pere e Ricotta", price: "€16", desc: "Con cioccolato a scaglie"},
-                {name: "Focaccia Nutella e Cocco", price: "€16", desc: ""},
-                {name: "Focaccia della Nonna", price: "€16", desc: "Ripiena con crema e pinoli"}
-            ],
-            vini_bianchi: [
-                {name: "Vino della Casa (1 Lt)", price: "€6", desc: "Locale artigianale"},
-                {name: "Vino della Casa (1/2 Lt)", price: "€4", desc: "Locale artigianale"},
-                {name: "Vino della Casa (1/4 Lt)", price: "€3", desc: "Locale artigianale"},
-                {name: "Dino Limiti Sfuso (1 Lt)", price: "€6", desc: ""},
-                {name: "Dino Limiti Sfuso (1/2 Lt)", price: "€4", desc: ""},
-                {name: "Dino Limiti Sfuso (1/4 Lt)", price: "€3", desc: ""},
-                {name: "Romanella Bianca", price: "€12", desc: ""},
-                {name: "Ribolla Gialla", price: "€20", desc: "Venezia Giulia"},
-                {name: "Friulano", price: "€15", desc: "Villa Danieli"},
-                {name: "Satrico", price: "€20", desc: "Casale del Giglio"},
-                {name: "Greco di Tufo", price: "€20", desc: "Feudi di San Gregorio"},
-                {name: "Gotto d'oro", price: "€18", desc: "Marino Superiore"},
-                {name: "Pecorino Biologico", price: "€20", desc: "Cantina Tollo"},
-                {name: "Falanghina", price: "€20", desc: "Feudi di San Gregorio"},
-                {name: "Falanghina Beneventano", price: "€18", desc: ""},
-                {name: "Moscato Giallo", price: "€20", desc: "Dino Limiti"},
-                {name: "People", price: "€20", desc: "Poggio Le Volpi"}
-            ],
-            vini_rossi: [
-                {name: "Vino della Casa (1 Lt)", price: "€6", desc: "Locale artigianale"},
-                {name: "Vino della Casa (1/2 Lt)", price: "€4", desc: "Locale artigianale"},
-                {name: "Vino della Casa (1/4 Lt)", price: "€3", desc: "Locale artigianale"},
-                {name: "Dino Limiti Sfuso (1 Lt)", price: "€10", desc: ""},
-                {name: "Dino Limiti Sfuso (1/2 Lt)", price: "€6", desc: ""},
-                {name: "Dino Limiti Sfuso (1/4 Lt)", price: "€4", desc: ""},
-                {name: "Romanella Rossa", price: "€12", desc: ""},
-                {name: "Montefalco Sagrantino", price: "€24", desc: "Vignabaldo Umbra"},
-                {name: "Nero d'Avola", price: "€18", desc: "Fonte Frontini"},
-                {name: "Morellino di Scansano", price: "€20", desc: "La Rasola"},
-                {name: "Colle del Turchetto", price: "€20", desc: "Dino Limiti"},
-                {name: "Barolo", price: "€40", desc: "Antica Cantina di Calosso"},
-                {name: "Shiraz", price: "€20", desc: "Casale del Giglio"},
-                {name: "Chianti", price: "€18", desc: "Torre delle Grazie"},
-                {name: "Vinea Domini", price: "€18", desc: ""},
-                {name: "Col di Sasso", price: "€16", desc: "Banfi"},
-                {name: "Brunello di Montalcino", price: "€35", desc: "Predella"},
-                {name: "Rosse Masserie", price: "€18", desc: "Negroamaro Salento"},
-                {name: "Santa Cristina", price: "€18", desc: "Toscana"},
-                {name: "Ninfeo", price: "€12", desc: "Cannonau di Sardegna"},
-                {name: "Amarone della Valpolicella", price: "€28", desc: "Le Colline dei Filari"},
-                {name: "Barbera d'Asti", price: "€18", desc: "Medaina"},
-                {name: "Refosco", price: "€18", desc: "Paron Mario"},
-                {name: "Barbera d'Asti", price: "€12", desc: "Antica Cantina di Calosso"},
-                {name: "Cantalupi", price: "€18", desc: "Tenute Conti Zecca"},
-                {name: "Brunello di Montalcino", price: "€35", desc: "Sensi"},
-                {name: "Montepulciano d'Abruzzo", price: "€18", desc: "Predella"}
+                {name: "Dolci fatti in casa", price: "€5", desc: ""}
             ],
             bevande: [
-                {name: "Birra Nastro Azzurro 62cl", price: "€6", desc: ""},
-                {name: "Birra Nastro Azzurro 33cl", price: "€4", desc: ""},
-                {name: "Birra Peroni Gran Riserva Rossa 33cl", price: "€4", desc: ""},
-                {name: "Birra Peroni Doppio Malto 33cl", price: "€4", desc: ""},
-                {name: "Birra Birba Artigianale 33cl", price: "€6", desc: ""},
-                {name: "Coca Cola Grande", price: "€5", desc: ""},
-                {name: "Acqua 1 Lt", price: "€2", desc: ""},
-                {name: "Bibite in lattina", price: "€2", desc: ""}
+                {name: "Vino locale", price: "€6", desc: ""},
+                {name: "Amari", price: "€3", desc: ""},
+                {name: "Acqua", price: "€2", desc: ""},
+                {name: "Caffè", price: "€1", desc: ""}
             ]
         };
         
         function renderMenu(e){const n=document.getElementById("menu-container"),a=menuData[e];a&&(n.innerHTML=a.map(e=>`\n                <div class="flex justify-between items-start border-b border-gray-300 pb-4 hover:bg-white p-4 rounded transition-all shadow-sm hover:shadow-md group">\n                    <div class="flex-1 pr-4">\n                        <h4 class="text-xl font-geo font-bold text-brand-green mb-1 group-hover:text-brand-red transition-colors">${e.name}</h4>\n                        ${e.desc?`<p class="text-gray-500 text-sm font-light italic">${e.desc}</p>`:""}\n                    </div>\n                    <span class="text-brand-dark font-bold text-xl whitespace-nowrap">${e.price}</span>\n                </div>\n            `).join(""),document.querySelectorAll(".menu-tab").forEach(n=>{n.classList.remove("bg-brand-green","text-white","shadow-lg","transform","scale-105"),n.classList.add("text-gray-500","bg-white","border","border-gray-200"),n.dataset.category===e&&(n.classList.remove("text-gray-500","bg-white","border","border-gray-200"),n.classList.add("bg-brand-green","text-white","shadow-lg","transform","scale-105"))}))}
         function handleReservation(e){e.preventDefault();const n=e.target,a=n.querySelector("button"),t=a.innerHTML,r=n.querySelector('[name="name"]').value,o=n.querySelector('[name="phone"]').value,i=n.querySelector('[name="date"]').value,s=n.querySelector('[name="time"]').value,c=n.querySelector('[name="guests"]').value,l=n.querySelector('[name="notes"]').value,d=new Date(i).toLocaleDateString("it-IT",{weekday:"long",year:"numeric",month:"long",day:"numeric"}),m=`Ciao! Vorrei prenotare un tavolo per ${c} persone a nome ${r} per ${d} alle ore ${s}. Il mio numero è ${o}.${l?" Note aggiuntive: "+l:""}`,u=encodeURIComponent(m);a.innerHTML='<i class="fas fa-check"></i> Apro WhatsApp...',a.classList.remove("bg-brand-green"),a.classList.add("bg-gray-800"),window.open(`https://wa.me/393921384418?text=${u}`,"_blank"),setTimeout(()=>{a.innerHTML=t,a.classList.add("bg-brand-green"),a.classList.remove("bg-gray-800"),n.reset()},3e3)}
-        function initMenu(){const e=document.getElementById("menu-tabs");e.innerHTML=[{id:"antipasti",label:"Antipasti"},{id:"primi",label:"Primi"},{id:"secondi",label:"Secondi"},{id:"contorni",label:"Contorni"},{id:"pizze",label:"Pizze"},{id:"calzoni_focacce",label:"Calzoni"},{id:"vini_bianchi",label:"Vini Bianchi"},{id:"vini_rossi",label:"Vini Rossi"},{id:"bevande",label:"Bevande"},{id:"dolci",label:"Dolci"}].map(e=>`\n                <button \n                    class="menu-tab px-6 py-2 rounded-full font-bold uppercase text-sm transition-all duration-300 focus:outline-none m-1" \n                    onclick="renderMenu('${e.id}')"\n                    data-category="${e.id}">\n                    ${e.label}\n                </button>\n            `).join(""),renderMenu("antipasti")}
+        
+        /* Modificato: Rimossi Calzoni, Vini Bianchi e Vini Rossi dai bottoni */
+        function initMenu(){const e=document.getElementById("menu-tabs");e.innerHTML=[{id:"antipasti",label:"Antipasti"},{id:"primi",label:"Primi"},{id:"secondi",label:"Secondi"},{id:"contorni",label:"Contorni"},{id:"pizze",label:"Pizze"},{id:"bevande",label:"Bevande"},{id:"dolci",label:"Dolci"}].map(e=>`\n                <button \n                    class="menu-tab px-6 py-2 rounded-full font-bold uppercase text-sm transition-all duration-300 focus:outline-none m-1" \n                    onclick="renderMenu('${e.id}')"\n                    data-category="${e.id}">\n                    ${e.label}\n                </button>\n            `).join(""),renderMenu("antipasti")}
         function closeMenu(){document.getElementById("mobile-menu").classList.add("hidden")}
         
         document.getElementById("mobile-menu-btn").addEventListener("click",()=>{document.getElementById("mobile-menu").classList.toggle("hidden")});
